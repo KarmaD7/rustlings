@@ -26,6 +26,19 @@ struct Person {
 impl FromStr for Person {
     type Err = Box<dyn error::Error>;
     fn from_str(s: &str) -> Result<Person, Self::Err> {
+        // if s.len() == 0 {
+        //     return Err(Self::Err::StringError);
+        // }
+        // let splited_str: Vec<&str> = s.split(',').collect();
+        // if splited_str.len() != 2 {
+        //     return Err(Self::Err::StringError);
+        // }
+        // let name = splited_str[0];
+        // let age_to_parse = splited_str[1].parse::<usize>();
+        // match age_to_parse {
+        //     Ok(age) => Ok(Person { name: String::from(name), age: age }),
+        //     Err(_) => Err(Self::Err::StringError)
+        // }
     }
 }
 

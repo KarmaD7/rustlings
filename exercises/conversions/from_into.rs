@@ -37,6 +37,23 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.len() == 0 {
+            return Person::default();
+        }
+        let splited_str: Vec<&str> = s.split(',').collect();
+        if splited_str.len() != 2 {
+            return Person::default();
+        }
+        let name = splited_str[0];
+        if name == "" {
+            return Person::default();
+        }
+        let parse_age = splited_str[1].parse::<usize>();
+        match parse_age {
+            Ok(age) => Person { name: String::from(name), age: age },
+            Err(_) => Person::default()
+        }
+
     }
 }
 

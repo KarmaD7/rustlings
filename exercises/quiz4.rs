@@ -7,6 +7,12 @@
 
 // I AM NOT DONE
 
+macro_rules! my_macro {
+    ($val:literal) => {
+        "Hello ".to_owned() + $val;
+    };
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

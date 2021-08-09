@@ -23,10 +23,12 @@ fn main() {
         for _ in 0..10 {
             thread::sleep(Duration::from_millis(250));
             status_shared.jobs_completed += 1;
-        }
+        } 
     });
     while status.jobs_completed < 10 {
         println!("waiting... ");
         thread::sleep(Duration::from_millis(500));
     }
 }
+
+
